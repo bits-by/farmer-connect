@@ -105,43 +105,26 @@ footer a{
 
 /* Login */
 
+
+
 #main-div {
-  /* width: 90%; */
-  display: flex;
+  
+  width: 500px;
   justify-content: center;
   font-size: x-large;
-  /* padding-top: 5%; */
-}
-.title-page {
-  text-align: center;
-  font-size: 2.9rem;
-  font-family: "Roboto", sans-serif;
 }
 
-.text-name {
-  font-size: medium;
-  font-family: "Roboto", sans-serif;
-}
-.link-tag {
-  text-align: center;
-}
-.link-tag a {
-  text-decoration: none;
-}
-.user_not_text{
-text-align: center;
-margin-top: 5%;
-}
 
 
 
 /* Registration */
+/* 
+
 #main-div{
-  width: 90%;
-  display: flex;
+  width: 500px;
   justify-content: center;
   font-size: x-large;
-   /* padding-top: 5%; */
+  
 }
 .title-page{
   text-align: center;
@@ -167,4 +150,4 @@ margin-top: 5%;
 .usertype{
   font-size: 1.2rem;
   margin-bottom: 12px;
-}
+}  */
