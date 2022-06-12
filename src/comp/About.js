@@ -54,8 +54,8 @@ const About = () => {
                             <li>Guwahati</li>
                             <li>Chandigarh</li>
                             <li>Parbhani</li>
-                            <li>Latur</li>
                             <li>Solapur</li>
+                            <li>Latur</li>
                             <li>Dhule</li>
                             <li>Nagpur</li>
                         </ul>

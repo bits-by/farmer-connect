@@ -3,6 +3,7 @@ import Header from "./Header";
 import Body from "./Body";
 import Footer from "./Footer";
 import Navbar from './Navbar';
+import Sell from './Sell';
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
             <Navbar/>                   
             <Header/>
             <Body/>
+            <Sell/>
             <Footer/>
         </div>
   )

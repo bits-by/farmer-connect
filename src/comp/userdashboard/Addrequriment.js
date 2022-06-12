@@ -1,13 +1,13 @@
 import React from "react";
 
-const Add = () => {
+const Addrequirement = () => {
   return (
     <>
       <div className="container" id="add">
         {/* add crop form */}
         <div className="card shadow p-3" >
           <div className="container add-crop">
-            <p className="text-center h2 fw-bold">Add Crop</p>
+            <p className="text-center h2 fw-bold">Add Requirement</p>
             <div className="card-body">
               <form>
                 <div class="form-group mb-3">
@@ -85,4 +85,4 @@ const Add = () => {
   );
 };
 
-export default Add;
+export default Addrequirement;

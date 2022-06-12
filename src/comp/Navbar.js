@@ -5,33 +5,42 @@ const Navbar = () => {
     return(
 
       <>
-       
-        <ul className="nav justify-content-end ">
+      <div className="container">
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <a href="/" className="navbar-brand">
+          {/* <img src="./comp/img/fclogo.png" alt="fc-logo"width="40" height="40"
+          className="d-inline-block align-top" /> */}
+          Farmer Connect</a>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#toggleMobileMenu"
+          aria-controls="toggleMobileMenu"
+          aria-expanded="false"
+          aria-lable="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
         
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost:3000/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost:3000/Login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/Addcrop">Dashboard</a>
-        </li>
+          <div className="collapse navbar-collapse" id="toggleMobileMenu">
 
-
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="http://localhost:3000/LoginPage">Admin</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/LoginPage">User</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/LoginPage">Farmer</a>
-        </li>   
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/About">About</a>
-        </li>
-      </ul>       
+            <ul className="navbar-nav ms-auto ">            
+            <li class="nav-item">
+              <a class="nav-link active"  href="http://localhost:3000/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active"  href="http://localhost:3000/Login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="http://localhost:3000/Addcrop">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active"  href="http://localhost:3000/LoginPage">Admin</a>
+            </li>
+          </ul> 
+        </div>
+      </nav>
+      </div>
       </>
     )
 }

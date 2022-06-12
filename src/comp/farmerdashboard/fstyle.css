@@ -1,0 +1,29 @@
+.fdashboard{
+    text-align: center;
+}
+.add-crop{
+    max-width: 400px;
+}
+
+.sidebar{
+    max-height: 500px;
+}
+
+
+.sidebar-menu {
+    position: relative;
+    max-height: 500px;  
+}
+.sidebar-menu-item {
+    display: flex;
+    align-items: center;
+    place-content: flex-start;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #555555;
+    transition: color 0.3s ease-in-out;  
+}
+
+
+
