@@ -8,19 +8,36 @@ import "../style.css";
 
 const Login = () =>{
   
+  const initailState={
+    role:"",
+    email:"",
+    password:""
+  }
 
   
-      // const [validated, setValidated] = useState(false);
-      // const handleSubmit = (e) =>{
-       
-        
-      //   const form = e.currentTarget;
+  const [fromValues, setFormValue] = useState(initailState);
+  const [error, setError] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+  const handleChange = (event) => {
+    //     this.setState({ [event.target.name]: event.target.value });
+    const { name, value } = event.target;
+    setFormValue({ ...fromValues, [name]: value });
+
+  };
+  const handleSubmit = (event) => {
+
+    event.preventDefault(); 
+    // setError(validate(fromValues));
+    setIsSubmit(true);
+     console.log("User Data ",fromValues);
+  }
+      //  const form = e.currentTarget;
       //   if(form.checkValidity() === false){
       //     e.preventDefault();
       //     console.log(form)
       //   }
-      //   setValidated(true);
-      //   console.log(e.currentTarget.value)
+        // setValidated(true);
+        // console.log(e.currentTarget.value)
     
       // const onSubmit = (data) => {
       //   // const newUser = Json.parse(data)
@@ -54,20 +71,20 @@ const Login = () =>{
            <p className="text-center fs-2 fw-bold">Log In</p>
            
           </div>
-          <Form className="card-body m-3 " > 
+          <Form className="card-body m-3 " onSubmit={handleSubmit} > 
           <Form.Group className="usertype d-flex   mb-5">
-                <Form.Control type="radio" value="admin" className="form-check-input me-1 " name="usertype"/>Admin
-                <Form.Control type="radio" value="user" className="form-check-input ms-3 me-1" name="usertype"/>User
-                <Form.Control type="radio" value="farmer" className="form-check-input ms-3 me-1" name="usertype"/>Farmer       
+                <Form.Control type="radio" value="ADMIN" className="form-check-input me-1 " name="role" onChange={handleChange}/>Admin
+                <Form.Control type="radio" value="USER" className="form-check-input ms-3 me-1" name="role" onChange={handleChange}/>User
+                <Form.Control type="radio" value="FARMER" className="form-check-input ms-3 me-1" name="role" onChange={handleChange}/>Farmer       
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" required />
+            <Form.Control type="email" placeholder="Enter email" required name="email" onChange={handleChange}/>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" required/>
+            <Form.Control type="password" placeholder="Password" required name="password" onChange={handleChange}/>
 
           </Form.Group>
 
@@ -75,17 +92,17 @@ const Login = () =>{
           <Button variant="primary" type="submit">
             Submit
           </Button>
-          <div className="link-tag text-center text-info h6">
-                <a href="http://localhost:3000/Registration" >New User! Create Account</a>
-          </div>
+         
         </Form>
 
-
+        <div className="link-tag text-center text-info h6">
+                <a href="http://localhost:3000/Registration" >New User! Create Account</a>
+          </div>
           </div>
         </div>
         </>
       );
    
-}
+      }
 
 export default Login;

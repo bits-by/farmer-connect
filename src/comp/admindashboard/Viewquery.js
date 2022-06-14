@@ -2,7 +2,7 @@ import { TextareaAutosize } from "@material-ui/core";
 import React from "react";
 import { useForm } from "react-hook-form";
 
-const Helpdesk = () => {
+const Viewquery = () => {
   const {
     handleSubmit,
     register,
@@ -13,8 +13,10 @@ const Helpdesk = () => {
     <div className="container  ">
         <div className="card col-7 mx-auto mt-5">
       <div className="card-body">
+        <h2>Query</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="d-flex  mb-3">
+            <h2></h2>
             <label>Name :- </label>
             <input
               type="text"
@@ -40,7 +42,6 @@ const Helpdesk = () => {
               })}
             />
             {errors.email && errors.email.message}
-            
           </div>
 
           <div className="d-flex mb-3">
@@ -63,4 +64,4 @@ const Helpdesk = () => {
   );
 };
 
-export default Helpdesk;
+export default Viewquery;

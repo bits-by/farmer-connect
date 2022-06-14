@@ -36,8 +36,8 @@ const Usidemenu = () => {
                       </Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link" to="/userdashboard/addrequirement">
-                        Edit/Delete Requirement
+                      <Link className="nav-link" to="/userdashboard/viewcrop">
+                        View Crop
                       </Link>
                     </li>
                     <li class="nav-item">

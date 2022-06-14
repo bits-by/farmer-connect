@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Navbar = () => {
+const Logout = () => {
     return(
 
       <>
@@ -25,11 +25,11 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="toggleMobileMenu">
 
             <ul className="navbar-nav ms-auto ">            
-            <li class="nav-item">
+            {/* <li class="nav-item">
               <a class="nav-link active"  href="http://localhost:3000/">Home</a>
-            </li>
+            </li> */}
             <li class="nav-item">
-              <a class="nav-link active"  href="http://localhost:3000/Login">Login</a>
+              <a class="nav-link active"  href="http://localhost:3000/">Logout</a>
             </li>
             
           </ul> 
@@ -40,4 +40,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default Logout;

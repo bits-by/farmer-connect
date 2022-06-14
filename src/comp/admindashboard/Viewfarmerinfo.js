@@ -1,36 +1,37 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 
-const View = () => {
+const Viewfarmerinfo = () => {
 
-  const [crops,setCrops] = useState([]);
+  const [users,setUsers] = useState([]);
 
   return (
       <>
      
      <div className="card shadow  mt-5 p-4">
-          <p className="text-center text-info fw-bold h2 mb-5">View Requirement</p>
+          <p className="text-center text-info fw-bold h2 mb-5">Farmer Info</p>
           <table className="table table-hover align-middle ">
             <thead>
-              <th>Crop Name</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Action</th>
+              <th>Name</th>
+              <th>Number</th>
+              <th>Email</th>
+              <th>State</th>
+              <th>District</th>
             </thead>
             <tbody>
-                    {crops.length > 0 ? (
-                        crops.map((crop, i) => (
-                            <tr key={crop.id}>
-                                <td>{crop.name}</td>
-                                <td>{crop.quantity}</td>
-                                <td>{crop.price}</td>
-                                <td>{crop.action}</td>         
+                    {users.length > 0 ? (
+                        users.map((user, i) => (
+                            <tr key={user.id}>
+                                <td>{user.name}</td>
+                                <td>{user.quantity}</td>
+                                <td>{user.price}</td>
+                                <td>{user.action}</td>         
                                 
                                 
                                 <td className="text-left">
                                     < Button
                                         variant='danger'
-                                        // onClick={() => handleDelete(crop.id)}
+                                        // onClick={() => handleDelete(user.id)}
                                         className="button muted-button"
                                     >
                                         Delete
@@ -40,7 +41,7 @@ const View = () => {
                         ))
                     ) : (
                         <tr>
-                            <td colSpan={7}>No crops</td>
+                            <td colSpan={7}>No users</td>
                         </tr>
                     )}
                 </tbody>
@@ -52,4 +53,4 @@ const View = () => {
   )
 }
 
-export default View
+export default Viewfarmerinfo

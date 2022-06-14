@@ -1,29 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button';
 
 const Userbidding = () => {
+
+  const [crops,setCrops] = useState([]);
+
   return (
-    <div className="card shadow  mt-5 p-4">
-    <p className="text-center text-info fw-bold h2 mb-5">Bidding</p>
-    <table className="table table-hover align-middle ">
-      <thead>
-        <th>Place</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Action</th>
-      </thead>
-      <tbody className="">
-        <tr >
-          <td>Pune</td>
-          <td>12 June</td>
-          <td>10:00 AM</td>
-          <td>
-              <button className="btn btn-primary" onClick="edit(product.id)">Edit</button>
-              <button className="btn btn-danger ms-3" onClick="delete(product.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      <>
+     
+     <div className="card shadow  mt-5 p-4">
+          <p className="text-center text-info fw-bold h2 mb-5">Bidding Info</p>
+          <table className="table table-hover align-middle ">
+            <thead>
+              <th>Crop Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Action</th>
+            </thead>
+            <tbody>
+                    {crops.length > 0 ? (
+                        crops.map((crop, i) => (
+                            <tr key={crop.id}>
+                                <td>{crop.name}</td>
+                                <td>{crop.quantity}</td>
+                                <td>{crop.price}</td>
+                                <td>{crop.action}</td>         
+                                
+                                
+                                <td className="text-left">
+                                    < Button
+                                        variant='danger'
+                                        // onClick={() => handleDelete(crop.id)}
+                                        className="button muted-button"
+                                    >
+                                        Delete
+                                    </Button>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan={7}>No crops</td>
+                        </tr>
+                    )}
+                </tbody>
+          </table>
+        </div>
+
+   
+    </>
   )
 }
 

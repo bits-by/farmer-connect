@@ -1,6 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
+import Button from 'react-bootstrap/Button';
+import { useForm } from "react-hook-form";
+
+
 
 const Addrequirement = () => {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (values) => console.log(values);
+
+  const [crops,setCrops] = useState([]);
   return (
     <>
       <div className="container" id="add">
@@ -9,7 +21,7 @@ const Addrequirement = () => {
           <div className="container add-crop">
             <p className="text-center h2 fw-bold">Add Requirement</p>
             <div className="card-body">
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div class="form-group mb-3">
                   <label for="exampleInputEmail1">Crop Name</label>
                   <input
@@ -18,6 +30,10 @@ const Addrequirement = () => {
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     placeholder=""
+                    {...register("crop name", {
+                      required: "Required",
+                      validate: (value) => value !== "admin" || "Nice try!",
+                    })}
                   />
                   {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                 </div>
@@ -28,6 +44,10 @@ const Addrequirement = () => {
                     class="form-control"
                     id="quantity"
                     placeholder=""
+                    {...register("quantity", {
+                      required: "Required",
+                      validate: (value) => value !== "admin" || "Nice try!",
+                    })}
                   />
                 </div>
                 <div class="form-group mb-3">
@@ -37,18 +57,13 @@ const Addrequirement = () => {
                     class="form-control"
                     id="exampleInputPassword1"
                     placeholder=""
+                    {...register("price", {
+                      required: "Required",
+                      validate: (value) => value !== "admin" || "Nice try!",
+                    })}
                   />
                 </div>
-                <div class="form-group form-check mb-3">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    id="exampleCheck1"
-                  />
-                  <label class="form-check-label" for="exampleCheck1">
-                    Check me out
-                  </label>
-                </div>
+                
                 <button type="submit" class="btn btn-primary">
                   Submit
                 </button>
@@ -67,17 +82,33 @@ const Addrequirement = () => {
               <th>Price</th>
               <th>Action</th>
             </thead>
-            <tbody className="">
-              <tr >
-                <td>wheat</td>
-                <td>900kg</td>
-                <td>1000/kg</td>
-                <td>
-                    <button className="btn btn-primary" onClick="edit(product.id)">Edit</button>
-                    <button className="btn btn-danger ms-3" onClick="delete(product.id)">Delete</button>
-                </td>
-              </tr>
-            </tbody>
+            <tbody>
+                    {crops.length > 0 ? (
+                        crops.map((crop, i) => (
+                            <tr key={crop.id}>
+                                <td>{crop.name}</td>
+                                <td>{crop.quantity}</td>
+                                <td>{crop.price}</td>
+                                <td>{crop.action}</td>         
+                                
+                                
+                                <td className="text-left">
+                                    < Button
+                                        variant='danger'
+                                        // onClick={() => handleDelete(crop.id)}
+                                        className="button muted-button"
+                                    >
+                                        Delete
+                                    </Button>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan={7}>No crops</td>
+                        </tr>
+                    )}
+                </tbody>
           </table>
         </div>
       </div>

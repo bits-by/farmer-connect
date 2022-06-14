@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 
-const View = () => {
+const Viewfarmerstock = () => {
 
   const [crops,setCrops] = useState([]);
 
@@ -9,7 +9,7 @@ const View = () => {
       <>
      
      <div className="card shadow  mt-5 p-4">
-          <p className="text-center text-info fw-bold h2 mb-5">View Requirement</p>
+          <p className="text-center text-info fw-bold h2 mb-5">Farmer Stock</p>
           <table className="table table-hover align-middle ">
             <thead>
               <th>Crop Name</th>
@@ -52,4 +52,4 @@ const View = () => {
   )
 }
 
-export default View
+export default Viewfarmerstock

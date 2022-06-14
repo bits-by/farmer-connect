@@ -36,12 +36,12 @@ const Sidemenu = () => {
                     </li>
                     <li class="nav-item">
                       <Link className="nav-link" to="/farmerdashboard/view">
-                        View Requirement
+                        View user Request
                       </Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link" to="/farmerdashboard/add">
-                        Edit/Delete Crop
+                      <Link className="nav-link" to="/farmerdashboard/edit">
+                        View Bidding Info
                       </Link>
                     </li>
                   </ul>

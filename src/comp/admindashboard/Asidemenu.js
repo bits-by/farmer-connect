@@ -31,17 +31,32 @@ const Asidemenu = () => {
                   <ul className="navbar-nav d-block w-100 sidebar-menu-item ">
                     <li className="nav-item ">
                       <Link className="nav-link " aria-current="page" to="/admindashboard/addbidding">
-                        Add Bidding Info
+                        Add Bidding Information
                       </Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link" to="/admindashboard/viewuser">
-                        View User
+                      <Link className="nav-link" to="/admindashboard/viewuserrequest">
+                        View User Request
                       </Link>
                     </li>
                     <li class="nav-item">
-                      <Link className="nav-link" to="/admindashboard/viewfarmer">
-                        View Farmer
+                      <Link className="nav-link" to="/admindashboard/viewfarmerstock">
+                        View Farmer Stock
+                      </Link>
+                    </li>
+                    <li class="nav-item">
+                      <Link className="nav-link" to="/admindashboard/viewuserinfo">
+                        View user Information
+                      </Link>
+                    </li>
+                    <li class="nav-item">
+                      <Link className="nav-link" to="/admindashboard/viewfarmerinfo">
+                        View Farmer Information
+                      </Link>
+                    </li>
+                    <li class="nav-item">
+                      <Link className="nav-link" to="/admindashboard/viewquery">
+                        View Query
                       </Link>
                     </li>
                     
